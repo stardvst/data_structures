@@ -1,0 +1,579 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<workbook source-platform='win' version='9.0' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <!-- build 9000.15.0318.1720                                -->
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='test' inline='true' name='textscan.42134.437723391202' version='9.0'>
+      <connection class='textscan' directory='C:/Projects/synopsys/TBB/src/TBB/Module1/parallel_scan' filename='test.csv' password='' server=''>
+        <relation name='test#csv' table='[test#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='distance' ordinal='0' />
+            <column datatype='integer' name='altitude' ordinal='1' />
+            <column datatype='real' name='angle' ordinal='2' />
+            <column datatype='real' name='max_angle' ordinal='3' />
+            <column datatype='integer' name='visible' ordinal='4' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>distance</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[distance]</local-name>
+            <parent-name>[test#csv]</parent-name>
+            <remote-alias>distance</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>altitude</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[altitude]</local-name>
+            <parent-name>[test#csv]</parent-name>
+            <remote-alias>altitude</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>angle</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[angle]</local-name>
+            <parent-name>[test#csv]</parent-name>
+            <remote-alias>angle</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>max_angle</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[max_angle]</local-name>
+            <parent-name>[test#csv]</parent-name>
+            <remote-alias>max_angle</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>visible</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[visible]</local-name>
+            <parent-name>[test#csv]</parent-name>
+            <remote-alias>visible</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name></remote-name>
+            <remote-type>0</remote-type>
+            <parent-name>[test#csv]</parent-name>
+            <remote-alias></remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Running Max Altitude' datatype='integer' name='[Calculation_1620514125035496]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='RUNNING_MAX(SUM([altitude]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Altitude' datatype='integer' name='[altitude]' role='measure' type='quantitative'>
+      </column>
+      <column caption='Angle' datatype='real' name='[angle]' role='measure' type='quantitative'>
+      </column>
+      <column aggregation='Sum' caption='Distance' datatype='integer' name='[distance]' role='dimension' type='ordinal'>
+      </column>
+      <column caption='Max Angle' datatype='real' name='[max_angle]' role='measure' type='quantitative'>
+      </column>
+      <column aggregation='Sum' caption='Visible' datatype='integer' name='[visible]' role='dimension' type='ordinal'>
+      </column>
+      <column-instance column='[visible]' derivation='None' name='[none:visible:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[altitude]' derivation='Sum' name='[sum:altitude:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1620514125035496]' derivation='User' name='[usr:Calculation_1620514125035496:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' />
+      </column-instance>
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#7f7f7f'>
+              <bucket>&quot;[textscan.42134.437723391202].[sum:altitude:qk]&quot;</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>&quot;[textscan.42134.437723391202].[usr:Calculation_1620514125035496:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:visible:ok]' type='palette'>
+            <map to='#2ca02c'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>0</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Altitude'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='test' name='textscan.42134.437723391202' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.42134.437723391202'>
+            <column caption='Altitude' datatype='integer' name='[altitude]' role='measure' type='quantitative'>
+            </column>
+            <column aggregation='Sum' caption='Distance' datatype='integer' name='[distance]' role='dimension' type='ordinal'>
+            </column>
+            <column-instance column='[distance]' derivation='None' name='[none:distance:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[visible]' derivation='None' name='[none:visible:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[altitude]' derivation='Sum' name='[sum:altitude:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Sum' caption='Visible' datatype='integer' name='[visible]' role='dimension' type='ordinal'>
+            </column>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane id='2'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[textscan.42134.437723391202].[none:visible:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#686868' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.42134.437723391202].[sum:altitude:qk]</rows>
+        <cols>[textscan.42134.437723391202].[none:distance:ok]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Running Max Altitude'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='test' name='textscan.42134.437723391202' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.42134.437723391202'>
+            <column caption='Running Max Altitude' datatype='integer' name='[Calculation_1620514125035496]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='RUNNING_MAX(SUM([altitude]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Altitude' datatype='integer' name='[altitude]' role='measure' type='quantitative'>
+            </column>
+            <column aggregation='Sum' caption='Distance' datatype='integer' name='[distance]' role='dimension' type='ordinal'>
+            </column>
+            <column-instance column='[distance]' derivation='None' name='[none:distance:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[altitude]' derivation='Sum' name='[sum:altitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1620514125035496]' derivation='User' name='[usr:Calculation_1620514125035496:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[textscan.42134.437723391202].[sum:altitude:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[textscan.42134.437723391202].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='1' y-axis-name='[textscan.42134.437723391202].[usr:Calculation_1620514125035496:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[textscan.42134.437723391202].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='2' y-axis-name='[textscan.42134.437723391202].[sum:altitude:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[textscan.42134.437723391202].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([textscan.42134.437723391202].[usr:Calculation_1620514125035496:qk] + [textscan.42134.437723391202].[sum:altitude:qk])</rows>
+        <cols>[textscan.42134.437723391202].[none:distance:ok]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='test' name='textscan.42134.437723391202' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.42134.437723391202'>
+            <column caption='Angle' datatype='real' name='[angle]' role='measure' type='quantitative'>
+            </column>
+            <column aggregation='Sum' caption='Distance' datatype='integer' name='[distance]' role='dimension' type='ordinal'>
+            </column>
+            <column-instance column='[distance]' derivation='None' name='[none:distance:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[angle]' derivation='Sum' name='[sum:angle:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane id='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#686868' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.42134.437723391202].[sum:angle:qk]</rows>
+        <cols>[textscan.42134.437723391202].[none:distance:ok]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class='schema' source-height='-1' />
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Altitude'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='2' param='[textscan.42134.437723391202].[none:visible:ok]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <highlight>
+        <color-one-way>
+          <field>[textscan.42134.437723391202].[none:distance:ok]</field>
+          <field>[textscan.42134.437723391202].[none:visible:ok]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+    <window auto-hidden='0' class='worksheet' maximized='0' name='Running Max Altitude'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='1' param='[textscan.42134.437723391202].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <highlight>
+        <color-one-way>
+          <field>[textscan.42134.437723391202].[none:Calculation_2280514125025061:qk]</field>
+          <field>[textscan.42134.437723391202].[none:distance:ok]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+    <window auto-hidden='0' class='worksheet' maximized='0' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[textscan.42134.437723391202].[none:distance:ok]</field>
+          <field>[textscan.42134.437723391202].[none:visible:ok]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Altitude' width='192'>
+      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
+      Ag4rWw2P275UAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Running Max Altitude' width='192'>
+      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
+      79PfxKEhVZuYcIvF6sxsfUF1ZJgqinn9Rr1FyeWkVK85fcsrlWotUjqlDAwYly8z+/4vxImJ
+      uDo8bH/yib24VF8w9NSEVy5bc/Pbg4/uF6PR2oLBAXJcxysUi5gN/bg8z3v11VfrT5955plj
+      x46dO3fu/Pnz9caXXnrp6tWrb7/9dr3lxRdfzOfzr732Wr3lxIkTIyMjr7/++sbG/RtXjoyM
+      nDhxYuXHP658dH8oZd++4V++VZmauvvdf6wvmPvP/5AymdvHj9db0j/6YfL48ZV//qfKBx/W
+      WpLf+U76B99f+Lu/dwuFWkvk61/L/eQnG2+8ce9f/rW+4PCv3zEuXlr63vfqLXt+/vPws3+x
+      8A/fdVdXAwMkKEeefv7I04QQ8vAtpwAIvkQDJwQIuCBAwAUBAi4IEHBBgIALAgRcECDggrMT
+      n4Fisdh4+Pjo0aMTExNP9BXPf+lLi4lE7XEilRp+oi8WCAH6DDiOs7y8XH9aLpef9CtuRaPr
+      yWTtsRBv5x1UsAkDLggQcEGAgAsCBFwQIOCCAAEXBAi4PCJAi/O3ltdwp3rwFXwg0Q2Fu65c
+      vZT68l/iTvV1lmXVp7gTQkKhUBuLqfOoUFWU7aeCwChtbhEJIY4k1xtdSSSE2Ipif9oSkiRC
+      iCuKjQsSSj2haXAmUEKILcu2EvwL34zMTV8ZGJqo3aleaRz0/7HTp09PTU3Vn7788sttLKZu
+      uS978lt/W396PJOJxWKNLceGh3oIOfPcl+cG+mstRw8d6iPk1DeP1Q+dj4+PDxIyPTb264YF
+      9+n6Ym6gcahv9/ZGCHnrm8e2trYecSpjz9AYVVVVVbEGgpYCA0TFVLZvtyqBjoS9MOCCAAEX
+      BAi4IEDABQECLggQcEGAgAvmRD/CmTNn8vn7t9jSdf2FF15obz2fNwjQI8zNzc3MzNQeJxIJ
+      BOgB2IQBFwQIuCBAwAUBAi4IEHAJDhC7fvHDW7c/2aVaoAMFB8gobIoLczd3qRboQMEBUqlb
+      iCTSu1QLdKD7BxJt23Yc5+E//9mzzxFCDMOozSRv2eeLLRwOJz+9D0Y0GjUMIxQK1VsIIYZh
+      2Lbd2CKKommajS2qqhqGoapqY6NpmqIoNrbYtk0IaWxhjBmGEY/HRVGs12MYRmNVsVjMMIyH
+      F3Qc54GqHlhQURTDMBKJhKqqtRZd1w3DkCQpuCrP82oLKopCGWOEENd1aw/8uK5LKW283Thj
+      zPO82hszTbN2cYLjOA/8IkK9JaDPDrvVW6rVqqIolFLXdQVBoJQ+7lD1BWv/JSRJanw7f1xV
+      /J/Dw1XtcKiHP4f622GMWZZViwhnVbZtC4IgimJtgnwtDDQ4Nzvk2LYgyQL178FYtWqKsiqJ
+      QRtNz3UM09J0TaBBYxmVCqOSrqkBQzHmmUY1pIWo/1C1/6aSJDqOJ8u+Z3Vs2xJF0azamhby
+      G4sxz3E8wlzHI1rItzDHtggVTNNUQpoiiS371KqihLmMqorvL0w4tuV4VJUFxyOyz1Ce65iW
+      o0hCwFCMeYZhqqpqGqYW1v0+ece2HI8w12ZU1LXtK5nEV155xa/EHWJm8ac//dn+p5/V/U+s
+      MeZ9+P6p+XW2r783YKg7Vz947/LC6PAeMTCMt69PvjM5e3h8KGCo1bmLb57+rZDoTyd035e7
+      OXnyvUvy5szZ6Y2Dw/0t+5ilez/7r//Zu3fgzZNv7jnwJ5rPe7w59e77l5YWbnxkybFMT1fr
+      Tk75v//935LDR373y1+I3ft6Y1rLXou3Lvzinani0q2pqzMTB8f8PojZj6++/ZsPCjOTd6qJ
+      wWzrV8wvzJ46dZrIwm/PXZg4ONpyKKt071dvvbWYz09dvTM6Oij7/KbF/K1rv3r/dxqtvDv5
+      h8MHtm+J9lkcB5LDT40NPrLX4PBYaaMQ3MeVQkp55V7ZDuwlFO6tP/+154KHiiTTmmBtlY2A
+      Ppk9oz1xdXT8oCz7fg6KlhgbzglKZGxv72pxy6/b0NgBXRaTqezMjWuuXydBfergfllVxUjv
+      WH/Sr1cqN5yKa9lsZrO4EXAtlWsUoz19hw8dCtiCyBKripH+TF9EtCyfsiRFuVc0Mj3dMbq+
+      WKj6jmWX1XimXCh+5atfaWz+DNZAVBB1XY/G41JgGpeXlob2j0f0oO2OLAmOHB3OZQI3YcST
+      Qv29XQHbJkKIIAqWpx45OCL5r8wkSdI0vbu7R9PC8WjrFRUVRF3TI7pSqNDxoQG/VaMkyZoW
+      jmtST/9QdyLauhMVND0cjUZj8URXPOpXlSjJmqYnInpm70hvV8yv29rqqh5L5Pr79Ugk6vOp
+      FgursqrrITHSPZDpjrf8wIzNdZsq2f4+QY7sH+zzeYNsbW1Vj8R7+voHepON/zr/BzOKRdpB
+      bSHJAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 3' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

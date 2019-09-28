@@ -1,0 +1,35 @@
+Street
+Court
+Avenue
+Lane
+Drive
+Blvd
+Circle
+Street N.
+Court N.
+Avenue N.
+Lane N.
+Drive N.
+Blvd N.
+Circle N.
+Street S.
+Court S.
+Avenue S.
+Lane S.
+Drive S.
+Blvd S.
+Circle S.
+Street E.
+Court E.
+Avenue E.
+Lane E.
+Drive E.
+Blvd E.
+Circle E.
+Street W.
+Court W.
+Avenue W.
+Lane W.
+Drive W.
+Blvd W.
+Circle W.
